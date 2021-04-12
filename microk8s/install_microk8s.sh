@@ -18,7 +18,7 @@ sudo microk8s kubectl config view --raw | sudo tee $HOME/.kube/config
 sudo chown -R $USER: $HOME/.kube/
 
 # download kubectl
-curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.1/bin/linux/amd64/kubectl
+curl -Lo kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
